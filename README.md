@@ -173,8 +173,11 @@ For commercial inquiries, please contact Shaojie Shen <eeshaojieATust.hk>.
 
 
 ## to run the vins fusion.
+
+```
 roslaunch vins vins_rviz.launch
 roslaunch mavros px4.launch 
 sudo chmod 777 /dev/ttyACM0
 roslaunch mavros px4.launch 
 rosrun vins vins_node ~/catkin_ws/src/VINS-Fusion-gpu/config/realsense_d435i/realsense_stereo_imu_config.yaml
+```
