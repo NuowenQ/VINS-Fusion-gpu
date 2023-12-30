@@ -175,6 +175,7 @@ For commercial inquiries, please contact Shaojie Shen <eeshaojieATust.hk>.
 ## to run the vins fusion.
 
 ```
+roslaunch realsense2_camera rs_camera_vins2.launch filters:=pointcloud
 roslaunch vins vins_rviz.launch
 roslaunch mavros px4.launch 
 sudo chmod 777 /dev/ttyACM0
