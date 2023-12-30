@@ -175,10 +175,16 @@ For commercial inquiries, please contact Shaojie Shen <eeshaojieATust.hk>.
 ## to run the vins fusion.
 
 ```
-roslaunch realsense2_camera rs_camera_vins2.launch filters:=pointcloud
+## New terminal:
 roslaunch vins vins_rviz.launch
-roslaunch mavros px4.launch 
+
+## New terminal:
 sudo chmod 777 /dev/ttyACM0
-roslaunch mavros px4.launch 
+roslaunch mavros px4.launch
+
+## New terminal:
+roslaunch realsense2_camera rs_camera_vins2.launch filters:=pointcloud
+
+## New terminal: 
 rosrun vins vins_node ~/catkin_ws/src/VINS-Fusion-gpu/config/realsense_d435i/realsense_stereo_imu_config.yaml
 ```
