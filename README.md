@@ -187,4 +187,17 @@ roslaunch realsense2_camera rs_camera_vins2.launch filters:=pointcloud
 
 ## New terminal: 
 rosrun vins vins_node ~/catkin_ws/src/VINS-Fusion-gpu/config/realsense_d435i/realsense_stereo_imu_config.yaml
+
+
+##-------------------------------------------------------------------------------------------------------------------------
+roslaunch offboard_control offboard_control_px4_aruco_navigation_v2.launch simulation:=false follower:=false
+
+## New terminal 2:
+roslaunch vins_to_mavros vins_to_mavros.launch
+
+## New terminal 3:
+catkin buildroslaunch realsense2_camera rs_camera_vins2.launch filters:=pointcloud
+
+## New terminal 4:
+rosrun vins vins_node ~/catkin_ws/src/VINS-Fusion-gpu/config/realsense_d435i/realsense_stereo_imu_config.yaml
 ```
