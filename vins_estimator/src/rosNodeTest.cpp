@@ -224,10 +224,10 @@ int main(int argc, char **argv)
 
     registerPub(n);
 
-    ros::Subscriber sub_imu = n.subscribe(IMU_TOPIC, 2000, imu_callback, ros::TransportHints().tcpNoDelay());
-    ros::Subscriber sub_feature = n.subscribe("/feature_tracker/feature", 2000, feature_callback);
-    ros::Subscriber sub_img0 = n.subscribe(IMAGE0_TOPIC, 100, img0_callback);
-    ros::Subscriber sub_img1 = n.subscribe(IMAGE1_TOPIC, 100, img1_callback);
+    ros::Subscriber sub_imu = n.subscribe(IMU_TOPIC, 10, imu_callback, ros::TransportHints().tcpNoDelay()); 2000 -> 10
+    ros::Subscriber sub_feature = n.subscribe("/feature_tracker/feature", 10, feature_callback); 2000 -> 10
+    ros::Subscriber sub_img0 = n.subscribe(IMAGE0_TOPIC, 10, img0_callback); 100 -> 10
+    ros::Subscriber sub_img1 = n.subscribe(IMAGE1_TOPIC, 10, img1_callback); 100 -> 10
 
     std::thread sync_thread{sync_process};
     ros::spin();
