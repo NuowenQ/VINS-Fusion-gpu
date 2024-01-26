@@ -201,3 +201,23 @@ catkin buildroslaunch realsense2_camera rs_camera_vins2.launch filters:=pointclo
 ## New terminal 4:
 rosrun vins vins_node ~/catkin_ws/src/VINS-Fusion-gpu/config/realsense_d435i/realsense_stereo_imu_config.yaml
 ```
+
+
+## New sets of commands to launch vins fuion on zed m
+```
+## New terminal 1:
+roslaunch vins vins_rviz.launch
+
+## New terminal 2: 
+roslaunch vins_to_mavros vins_to_mavros.launch
+
+## New terminal 3: 
+roslaunch zed_wrapper zedm.launch
+
+## New terminal 4:
+rosrun vins vins_node /home/nypnx02/catkin_ws/src/VINS-Fusion-gpu/config/zedm/nw_latest_IMU_CALI.yaml
+
+## New termianl 5:
+rosrun loop_fusion loop_fusion_node /home/nypnx02/catkin_ws/src/VINS-Fusion-gpu/config/zedm/nw_latest_IMU_CALI.yaml
+
+```
